@@ -1,0 +1,6 @@
+# Dependency
+node_modules/
+
+# Others
+.idea/
+TODO.txt

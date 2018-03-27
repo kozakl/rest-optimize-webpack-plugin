@@ -1,0 +1,13 @@
+{
+  "name": "rest-optimize-webpack-plugin",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
