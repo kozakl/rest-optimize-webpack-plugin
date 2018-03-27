@@ -2,7 +2,7 @@ const ConcatSource = require('webpack-core/lib/ConcatSource');
 /**
  * @author kozakluke@gmail.com
  */
-class RestOptimizePlugin
+class Main
 {
     apply(compiler)
     {
@@ -54,4 +54,4 @@ class RestOptimizePlugin
     }
 }
 
-module.exports = RestOptimizePlugin;
+module.exports = Main;
