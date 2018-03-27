@@ -1,7 +1,7 @@
 /**
  * @author kozakluke@gmail.com
  */
-export default class StringUtil
+class StringUtil
 {
     static replace(str, insert,
                         start,
@@ -18,3 +18,5 @@ export default class StringUtil
         }
     }
 }
+
+module.exports = StringUtil;
