@@ -1,8 +1,9 @@
-const ConcatSource = require('webpack-core/lib/ConcatSource');
+const ConcatSource = require('webpack-core/lib/ConcatSource'),
+      StringUtil   = require('./utils/StringUtil');
 /**
  * @author kozakluke@gmail.com
  */
-class RestOptimizePlugin
+class Main
 {
     apply(compiler)
     {
@@ -22,36 +23,22 @@ class RestOptimizePlugin
     
     processFile(file)
     {
-        var source = this.compilation.assets[file].source(),
+        let source = this.compilation.assets[file].source(),
             middle = source.indexOf('arguments.length;');
-        while (middle !=-1)
+        while (middle !==-1)
         {
-            const term1 = this.backSearch(source, '{', middle),
-                  term2 = this.backSearch(source, '}', middle),
-                  begin = this.backSearch(source, '[', middle),
+            const term1 = StringUtil.backSearch(source, '{', middle),
+                  term2 = StringUtil.backSearch(source, '}', middle),
+                  begin = StringUtil.backSearch(source, '[', middle),
                   end   = source.indexOf('}', middle);
             if (term1 < begin && term2 < begin)
-                source = this.remove(source, 'arguments;', begin, end + 1);
+                source = StringUtil.replace(source, 'arguments;', begin, end + 1);
             
             middle = source.indexOf('arguments.length;', middle + 1);
         }
         
         this.compilation.assets[file] = new ConcatSource(source);
     }
-    
-    remove(string, insert, start, end)
-    {
-        return string.substring(0, start) + insert +
-               string.substring(end);
-    }
-    
-    backSearch(string, searchChar, position)
-    {
-        for (var i = position; i--;) {
-            if (string[i] == searchChar)
-                return i;
-        }
-    }
 }
 
-module.exports = RestOptimizePlugin;
+module.exports = Main;
