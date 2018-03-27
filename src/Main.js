@@ -22,9 +22,9 @@ class Main
     
     processFile(file)
     {
-        var source = this.compilation.assets[file].source(),
+        let source = this.compilation.assets[file].source(),
             middle = source.indexOf('arguments.length;');
-        while (middle !=-1)
+        while (middle !==-1)
         {
             const term1 = this.backSearch(source, '{', middle),
                   term2 = this.backSearch(source, '}', middle),
