@@ -3,9 +3,8 @@
  */
 class StringUtil
 {
-    static replace(str, insert,
-                        start,
-                        end) {
+    static replace(str, insert, start,
+                                end) {
         return str.substring(0, start) + insert +
                str.substring(end);
     }
