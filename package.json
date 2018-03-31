@@ -1,9 +1,12 @@
 {
   "name": "rest-optimize-webpack-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./src/Main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/kozakluke/rest-optimize-webpack-plugin"
+  },
+  "dependencies": {
+    "webpack-core": "^0.6.9"
   }
 }
