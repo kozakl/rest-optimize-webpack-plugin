@@ -5,5 +5,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/kozakluke/rest-optimize-webpack-plugin"
+  },
+  "dependencies": {
+    "webpack-core": "^0.6.9"
   }
 }
