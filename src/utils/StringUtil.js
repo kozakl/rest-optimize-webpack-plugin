@@ -1,6 +1,3 @@
-/**
- * @author kozakluke@gmail.com
- */
 class StringUtil
 {
     static replace(str, insert, start,
